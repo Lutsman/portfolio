@@ -18,7 +18,7 @@ $RECYCLE.BIN/
 *.lnk
 
 #My ignore
-idea/
+.idea/
 
 # =========================
 # Operating System Files
@@ -44,3 +44,4 @@ idea/
 Network Trash Folder
 Temporary Items
 .apdisk
+
