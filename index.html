@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="ru">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
 
     <!-- Custom styles CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -15,15 +17,15 @@
 
 <!-- Home start -->
 
-<section id="home" class="pfblock-image screen-height">
-    <div class="home-overlay"></div>
+<section class="home screen-height">
+    <div class="home-overlay"></div> <!-- Накладываем на фоновую картинку затемнение и текстуру -->
     <div class="intro">
-        <div class="start">Hello, my name is John Doe and I am</div>
-        <h1>Full Stack Web Developer</h1>
-        <div class="start">creating modern and responsive Web Application</div>
-    </div>
+        <p>Привет, меня зовут Дмитрий Луценко и я</p>
+        <h1>Гордая птица ...</h1>
+        <p>creating modern and responsive Web Application</p>
+    </div><!--intro-->
 
-    <a href="#services">
+    <a href="#portfolio">
         <div class="scroll-down">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
@@ -31,9 +33,77 @@
         </div>
     </a>
 
-</section>
+</section><!--home-->
 
 <!-- Home end -->
+
+<!-- Navigation start -->
+
+<header>
+    <nav class="navbar" role="navigation">
+
+        <div class="container">
+
+            <div class="navbar-header">
+              <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>-->
+                <a class="navbar-brand" href="index.html">John Doe Дмитрий</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Works</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div><!-- .container -->
+
+    </nav>
+</header>
+
+<!-- Navigation end -->
+
+<!-- Portfolio start -->
+
+<section id="portfolio"></section><!--portfolio-->
+
+<!-- Portfolio end -->
+
+<!-- Skills start -->
+
+<section class="skills"></section><!--skills-->
+
+<!-- Skills end -->
+
+<!-- About start -->
+
+<section class="about"></section><!--about-->
+
+<!-- About end -->
+
+<!-- Footer start -->
+
+<footer></footer>
+
+<!-- Footer end -->
+
+<!-- Scroll to top -->
+
+<!-- Scroll to top end-->
+
+<!-- Javascript files -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

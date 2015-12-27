@@ -1,111 +1,63 @@
-// mixin //
-@mixin background-size($background-sizes...) {
-  -webkit-background-size: $background-sizes;
-  -moz-background-size: $background-sizes;
-  -o-background-size: $background-sizes;
-  background-size: $background-sizes;
-}
-@mixin transform($transform) {
-  -ms-transform: $transform;
-  -moz-transform: $transform;
-  -webkit-transform: $transform;
-  -o-transform: $transform;
-  transform: $transform;
-}
-@mixin border-radius($rads...) {
-  -moz-border-radius: $rads;
-  -webkit-border-radius: $rads;
-  border-radius: $rads;
-}
-@mixin transition($transitions...) {
-  -webkit-transition: $transitions;
-  -moz-transition: $transitions;
-  -o-transition: $transitions;
-  transition: $transitions;
-}
-@mixin animation($animations...) {
-  -webkit-animation: $animations;
-  -moz-animation: $animations;
-  -o-animation: $animations;
-  animation: $animations;
-}
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
 /*Import fonts from Google fonts */
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-
-// color and fonts variable //
-
 /* ----------------------------------------------
  Reset
  ---------------------------------------------- */
 * {
   padding: 0;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 /* ----------------------------------------------
  Main
  ---------------------------------------------- */
-
 body {
   font: 14px/1.8 'Raleway', sans-serif;
   color: #666;
-  background-color: #fff;
-}
+  background-color: #fff; }
+
 .container {
   width: 1140px;
-  padding: 0 15px;
-}
+  padding: 0 15px; }
+
 img {
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 a {
-  color: #999;
-}
+  color: #999; }
 
 a:hover {
   text-decoration: none;
-  color: #E7746F;
-}
+  color: #E7746F; }
 
 /* ---------------------------------------------- /*
  * Transition elsements
 /* ---------------------------------------------- */
-
-
 .navbar a,
 .form-control {
-  @include transition(all 0.4s ease-in-out 0s);
-}
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -o-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s; }
 
 a,
 .btn {
-  @include transition(all 0.125s ease-in-out 0s);
-}
-
+  -webkit-transition: all 0.125s ease-in-out 0s;
+  -moz-transition: all 0.125s ease-in-out 0s;
+  -o-transition: all 0.125s ease-in-out 0s;
+  transition: all 0.125s ease-in-out 0s; }
 
 /* ----------------------------------------------
  Home
  ---------------------------------------------- */
-
 .home {
   background: url("../images/cover.jpg") no-repeat fixed #222 50% 50%;
-  @include background-size(cover);
-}
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 .home-overlay {
   width: 100%;
   height: 100%;
@@ -113,62 +65,60 @@ a,
   left: 0;
   top: 0;
   background: url("../images/pattern.png") rgba(44, 62, 80, 0.3);
- /* z-index: 0;*/
-}
+  /* z-index: 0;*/ }
+
 .intro {
   width: 100%;
-  //padding: 0 15px; на квери для мобил
   position: absolute;
   top: 50%;
   left: 0;
   text-align: center;
   color: #fff;
-  @include transform(translate(0%, -50%));
-  p {
+  -ms-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
+  .intro p {
     margin: 15px 0;
-    font-size: 16px;
-  }
-}
+    font-size: 16px; }
 
 /* ---------------------------------------------- /*
  * Navigation
 /* ---------------------------------------------- */
-
 header {
   border-bottom: 1px solid #f5f5f5;
   position: relative;
- /* width: 100%;
-  z-index: 998;*/
-}
+  /* width: 100%;
+   z-index: 998;*/ }
 
 .navbar {
   min-height: 50px;
   position: relative;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
+
 .navbar-header {
-  float: left;
-}
+  float: left; }
+
 .navbar-brand {
   float: left;
   height: 20px;
   padding: 15px 15px 15px 0;
-  line-height: 20px;
-}
+  line-height: 20px; }
+
 /*
 .navbar-custom,
 .navbar-custom .dropdown-menu {
   background: #fff;
   padding: 0;
 }*/
-
 .navbar-brand,
 .navbar-nav > li > a,
 .navbar-nav .dropdown-menu > li > a {
- /* font-size: 11px;*/
+  /* font-size: 11px;*/
   letter-spacing: 3px;
-  color: #222;
-}
+  color: #222; }
+
 /*
 .navbar-custom .nav li.active,
 .navbar-custom .nav li a:hover,
@@ -182,8 +132,8 @@ header {
 .navbar-brand {
   font-weight: bold;
   font-size: 22px;
-  font-family: Lobster, cursive;
-}
+  font-family: Lobster, cursive; }
+
 /*
 .navbar-custom .dropdown-menu {
   border: 0;
@@ -204,12 +154,9 @@ header {
 .navbar-custom .navbar-toggle .icon-bar {
   background: #222;
 }*/
-
-
 /* ----------------------------------------------
  Scroll Down
  ---------------------------------------------- */
-
 .scroll-down {
   width: 50px;
   height: 50px;
@@ -219,20 +166,49 @@ header {
   bottom: 40px;
   text-align: center;
   border: 2px solid #fff;
-  @include border-radius(50%);
- /* display: block;
-  z-index: 10;*/
-}
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  /* display: block;
+   z-index: 10;*/ }
 
-.scroll-down span{
+.scroll-down span {
   position: relative;
   color: #fff;
-//  animation-name: drop; имя анимации / animation-duration: 1s; продолжительность / animation-timing-function: linear; от начала до конца с одинаковой скоростью / animation-iteration-count: infinite; повторяется бесконечное число раз //
- @include animation(drop 1s linear infinite);
-}
-@include keyframes(drop) {
-  0%   { top:0;  opacity: 0;}
-  30%  { top:10px; opacity: 1;}
-  100% { top:25px; opacity: 0;}
-}
+  -webkit-animation: drop 1s linear infinite;
+  -moz-animation: drop 1s linear infinite;
+  -o-animation: drop 1s linear infinite;
+  animation: drop 1s linear infinite; }
 
+@-webkit-keyframes drop {
+  0% {
+    top: 0;
+    opacity: 0; }
+  30% {
+    top: 10px;
+    opacity: 1; }
+  100% {
+    top: 25px;
+    opacity: 0; } }
+@-moz-keyframes drop {
+  0% {
+    top: 0;
+    opacity: 0; }
+  30% {
+    top: 10px;
+    opacity: 1; }
+  100% {
+    top: 25px;
+    opacity: 0; } }
+@keyframes drop {
+  0% {
+    top: 0;
+    opacity: 0; }
+  30% {
+    top: 10px;
+    opacity: 1; }
+  100% {
+    top: 25px;
+    opacity: 0; } }
+
+/*# sourceMappingURL=styles.css.map */
