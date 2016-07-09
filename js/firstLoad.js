@@ -103,14 +103,14 @@ function ready() {
     (function(){
         'use strict';
 
-        var homeBG = Array.prototype.slice.call(document.querySelectorAll('.screen-height'));
-        
-        
-        
-        $(".screen-height").height($(window).height());
+        var homeBG = document.getElementById('home');
 
-        $(window).resize(function(){
-            $(".screen-height").height($(window).height());
-        });
+        function setSizeLikeWindow(elem) {
+            elem.style.height =  document.documentElement.clientHeight + 'px';
+        }
+
+        setSizeLikeWindow(homeBG);
+        
+        window.addEventListener('resize', setSizeLikeWindow.bind(null, homeBG));
     })();
 }
