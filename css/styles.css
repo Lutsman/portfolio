@@ -30,8 +30,7 @@ body {
   clear: both; }
 
 header {
-  /* position: relative;*/
-  border-bottom: 1px solid #f5f5f5; }
+  min-height: 52px; }
 
 .container {
   max-width: 1200px;
@@ -87,12 +86,13 @@ a, img {
  Navigation
 /* ---------------------------------------------- */
 .navbar {
-  min-height: 51px;
-  /* position: relative;*/
+  min-height: 52px;
   font-weight: bold;
   color: #222;
   text-transform: uppercase;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5; }
   .navbar .container {
     padding: 0 15px; }
 
@@ -211,13 +211,6 @@ a, img {
   padding: 20px; }
   .slider h3 {
     padding-bottom: 20px; }
-  .slider img {
-    cursor: pointer;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%); }
-    .slider img:hover {
-      -webkit-filter: none;
-      filter: none; }
 
 .slider__block {
   padding: 20px;
@@ -228,6 +221,13 @@ a, img {
     font-size: 20px;
     color: #4285f4;
     text-align: center; }
+  .slider__block img {
+    cursor: pointer;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .slider__block img:hover {
+      -webkit-filter: none;
+      filter: none; }
 
 /* ----------------------------------------------
  Skills
@@ -235,7 +235,7 @@ a, img {
 .skill__block {
   width: 30%;
   float: left;
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
   .skill__block + .skill__block {
     margin-left: 5%; }
 
@@ -252,8 +252,8 @@ a, img {
     top: 0;
     left: 0; }
 
-.skill__name {
-  padding-top: 20px;
+.title {
+  padding: 20px 0;
   font-size: 20px;
   font-weight: bold;
   text-align: center; }
@@ -264,7 +264,62 @@ a, img {
 .about {
   background-color: #f5f5f5; }
 
+figure {
+  width: 50%;
+  float: left;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center; }
+  figure > img {
+    max-width: 200px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+
+.about__content {
+  padding: 0 150px 50px; }
+  .about__content p {
+    margin-bottom: 10px; }
+    .about__content p:first-child {
+      margin-bottom: 20px;
+      font-style: italic; }
+
+.about__info {
+  width: 30%;
+  float: left;
+  padding: 0 50px 50px; }
+  .about__info + .about__info {
+    margin-left: 5%; }
+  .about__info .title {
+    text-align: left; }
+  .about__info a {
+    font-size: 18px;
+    font-weight: bold; }
+
+.courses {
+  padding: 5px 0; }
+  .courses + ul {
+    padding-left: 10px; }
+
+.skype {
+  display: block;
+  width: 60px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+  .skype:hover {
+    -webkit-filter: none;
+    filter: none; }
+
+.link {
+  color: #4285f4; }
+
 /*js classes */
+.hidden {
+  display: none; }
+
 .js-top-fixed {
   position: fixed;
   top: 0;

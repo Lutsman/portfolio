@@ -100,8 +100,7 @@ body {
   clear: both;
 }
 header {
- /* position: relative;*/
-  border-bottom: 1px solid $bgGrey;
+  min-height: 52px;
 }
 
 .container {
@@ -165,12 +164,13 @@ a, img {
 /* ---------------------------------------------- */
 
 .navbar {
-  min-height: 51px;
- /* position: relative;*/
+  min-height: 52px;
   font-weight: bold;
   color: $linksNav;
   text-transform: uppercase;
   letter-spacing: 3px;
+  background-color: $white;
+  border-bottom: 1px solid $bgGrey;
   .container {
     padding: 0 15px;
   }
@@ -266,13 +266,6 @@ a, img {
   h3 {
     padding-bottom: 20px;
   }
-  img {
-    cursor: pointer;
-    @include filter(grayscale(100%));
-    &:hover {
-      @include filter(none);
-    }
-  }
 }
 .slider__block {
   padding: 20px;
@@ -281,6 +274,13 @@ a, img {
     font-size: 20px;
     color: #4285f4;
     text-align: center;
+  }
+  img {
+    cursor: pointer;
+    @include filter(grayscale(100%));
+    &:hover {
+      @include filter(none);
+    }
   }
 }
 
@@ -291,7 +291,7 @@ a, img {
 .skill__block {
   width: 30%;
   float: left;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   & + .skill__block {
     margin-left: 5%;
   }
@@ -309,8 +309,8 @@ a, img {
   }
 }
 
-.skill__name {
-  padding-top: 20px;
+.title {
+  padding: 20px 0;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -323,8 +323,66 @@ a, img {
 .about {
   background-color: $bgGrey;
 }
+figure {
+  width: 50%;
+  float: left;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  > img {
+    max-width: 200px;
+    @include border-radius(50%);
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  }
+}
+.about__content {
+  padding: 0 150px 50px;
+  p {
+    margin-bottom: 10px;
+    &:first-child {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+  }
+}
+.about__info {
+  width: 30%;
+  float: left;
+  padding: 0 50px 50px;
+  & + .about__info {
+    margin-left: 5%;
+  }
+  .title {
+    text-align: left;
+  }
+  a {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+.courses {
+  padding: 5px 0;
+  & + ul {
+    padding-left: 10px;
+  }
+}
+
+.skype {
+  display: block;
+  width: 60px;
+  @include filter(grayscale(100%));
+  &:hover {
+    @include filter(none);
+  }
+}
+.link {
+  color: #4285f4;
+}
 
 /*js classes */
+.hidden {
+  display: none;
+}
 
 .js-top-fixed {
   position: fixed;
