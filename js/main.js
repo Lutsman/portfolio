@@ -2,7 +2,14 @@
  * Created by Женя on 27.12.2015.
  */
 
+document.addEventListener('DOMContentLoaded', function () {
+    /*lighbox*/
+    (function(){
+        var lightBox = new Lightbox();
 
+        lightBox.load();
+    })();
+});
 
 $(document).ready(function(){
 
@@ -118,7 +125,7 @@ $(document).ready(function(){
         };
 
         var topMenu = new FixedMenu({
-            menu: document.querySelector('header')
+            menu: document.querySelector('nav.navbar')
         });
 
         topMenu.init();

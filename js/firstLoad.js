@@ -96,13 +96,9 @@
 
 
 
-document.addEventListener('DOMContentLoaded', ready);
-
-function ready() {
+document.addEventListener('DOMContentLoaded', function () {
     /*Home BG*/
     (function(){
-        'use strict';
-
         var homeBG = document.getElementById('home');
 
         function setSizeLikeWindow(elem) {
@@ -110,7 +106,7 @@ function ready() {
         }
 
         setSizeLikeWindow(homeBG);
-        
+
         window.addEventListener('resize', setSizeLikeWindow.bind(null, homeBG));
     })();
-}
+}); 
