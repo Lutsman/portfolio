@@ -1,16 +1,3 @@
-/**
- * Created by Женя on 27.12.2015.
- */
-
-document.addEventListener('DOMContentLoaded', function () {
-    /*lighbox*/
-    (function(){
-        var lightBox = new Lightbox();
-
-        lightBox.load();
-    })();
-});
-
 $(document).ready(function(){
 
     /*Fixed menu & smooth scroll to anchor */
@@ -432,6 +419,7 @@ $(document).ready(function(){
         profileForm.init();
     })();
 
+
     /*slider*/
     (function(){
     	$('.slider').slick({
@@ -441,9 +429,12 @@ $(document).ready(function(){
     })();
 
 
+    /*lighbox*/
+    (function(){
+        var lightBox = new Lightbox();
 
-
-    
+        lightBox.load();
+    })();
 
 
     /*some old script*/
@@ -459,7 +450,5 @@ $(document).ready(function(){
          $('#home').parallax('50%', 0.1);
          }*/
     })();
-
-
-
 });
+
