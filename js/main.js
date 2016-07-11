@@ -104,7 +104,7 @@ $(document).ready(function(){
     * mmenu
     * */
     (function(){
-
+        /*ScrollToAnchor class*/
         function ScrollToAnchor(options) {
             this._listenedBlock = options.listenedBlock || document.body;
             this._translation = options.translation || 0;
@@ -137,19 +137,22 @@ $(document).ready(function(){
             );
         };
 
-        var pageScroll = new ScrollToAnchor({
-            listenedBlock: document.querySelector('.page-wrap'),
-            translation:  document.querySelector('nav.navbar').offsetHeight
-        });
-        pageScroll.init();
-
-        var mmenuScroll = new ScrollToAnchor({
-            listenedBlock: document.getElementById('#m-menu'),
-            translation:  document.querySelector('nav.navbar').offsetHeight
-        });
+        /*page scroll*/
+        (function(){
+            var pageScroll = new ScrollToAnchor({
+                listenedBlock: document.querySelector('.page-wrap'),
+                translation:  document.querySelector('nav.navbar').offsetHeight
+            });
+            pageScroll.init();
+        })();
 
         /*mmenu*/
         (function(){
+            var mmenuScroll = new ScrollToAnchor({
+                listenedBlock: document.getElementById('#m-menu'),
+                translation:  document.querySelector('nav.navbar').offsetHeight
+            });
+
             setUpMmenu();
 
             function setUpMmenu() {
@@ -198,8 +201,6 @@ $(document).ready(function(){
         })();
 
     })();
-
-
 
     /*ScrollUp button*/
     (function(){
@@ -437,16 +438,14 @@ $(document).ready(function(){
                 url: form.action,
                 data: $.param(formData),
                 success: function (response) {
-                    self.hidePending(form);
-
                     if (response) {
-                        self.showSuccess(form);
+                        self.hidePending(form, self.showSuccess.bind(self, form));
 
                         if (resolve) {
                             resolve.apply(self, [form, response]);
                         }
                     } else {
-                        self.showError(form);
+                        self.hidePending(form, self.showError.bind(self, form));
 
                         if (reject) {
                             reject.apply(self, [form, response]);
@@ -458,9 +457,9 @@ $(document).ready(function(){
                 error: function (response) {
                     //throw new Error(response);
 
-                    self.hidePending(form);
+                    self.hidePending(form, self.showError.bind(self, form));
                     self.resetForms(form);
-                    self.showError(form);
+
                 }
             });
         };
@@ -489,10 +488,10 @@ $(document).ready(function(){
 
             $pendingBlock.fadeIn('normal');
         };
-        FormController.prototype.hidePending = function (form) {
+        FormController.prototype.hidePending = function (form, callback) {
             var $pendingBlock = $('.pend-block', $(form));
 
-            $pendingBlock.fadeOut('normal');
+            $pendingBlock.fadeOut('normal', 'linear', callback);
         };
 
         var profileForm = new FormController({});
@@ -512,60 +511,6 @@ $(document).ready(function(){
         var lightBox = new Lightbox();
 
         lightBox.load();
-    })();
-    
-
-    /*(function(){
-        /!*scroll class*!/
-        function ScrollToAnchor(options) {
-            this._listenedBlock = options.listenedBlock || document.body;
-            this._translation = options.translation || 0;
-        }
-        ScrollToAnchor.prototype.init = function () {
-            this._listenedBlock.addEventListener('click', this.anchorClickListener.bind(this));
-        };
-        ScrollToAnchor.prototype.anchorClickListener = function (e) {
-            var elem = e.target;
-            var anchorWithHash = elem.closest('a[href^="#"]');
-
-            if (!anchorWithHash) return;
-
-            e.preventDefault();
-
-            var target = anchorWithHash.hash;
-            var translation = anchorWithHash.hasAttribute('data-translation') ? +anchorWithHash.getAttribute('data-translation') : this._translation;
-
-            if(! document.querySelector(target)) return;
-
-            this.smoothScroll(target, translation);
-        };
-        ScrollToAnchor.prototype.smoothScroll = function (selector, translation) {
-            $("html, body").animate({
-                    scrollTop: $(selector).offset().top + (translation || 0)},
-                500,
-                function () {
-                    window.location.hash = selector;
-                }
-            );
-        };
-
-
-    })();*/
-    
-    
-    
-    /*some old script*/
-    (function(){
-        /* ---------------------------------------------- /*
-         * Home BG
-         /* ---------------------------------------------- */
-
-
-        /*if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-         $('#home').css({'background-attachment': 'scroll'});
-         } else {
-         $('#home').parallax('50%', 0.1);
-         }*/
     })();
 });
 
