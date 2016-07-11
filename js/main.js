@@ -130,10 +130,7 @@ $(document).ready(function(){
         ScrollToAnchor.prototype.smoothScroll = function (selector, translation) {
             $("html, body").animate({
                 scrollTop: $(selector).offset().top - (translation || 0)},
-                500, 
-                function () {
-                    window.location.hash = selector;
-                }
+                500
             );
         };
 
@@ -148,6 +145,18 @@ $(document).ready(function(){
 
         /*mmenu*/
         (function(){
+            /*mmenu scroll*/
+            /*function MmenuScroll(options) {
+                ScrollToAnchor.apply(this, arguments);
+            }
+
+            MmenuScroll.prototype = Object.create(ScrollToAnchor.prototype);
+            MmenuScroll.prototype.constructor = MmenuScroll;
+
+            MmenuScroll.prototype.init = function () {
+
+            };*/
+
             var mmenuScroll = new ScrollToAnchor({
                 listenedBlock: document.getElementById('#m-menu'),
                 translation:  document.querySelector('nav.navbar').offsetHeight
@@ -426,8 +435,8 @@ $(document).ready(function(){
             var self = this;
 
 
-            if (self._beforeSend) {
-                self._beforeSend.call(this, formData, form);
+            if (beforeSend) {
+                beforeSend.call(this, formData, form);
             }
             //console.dir(formData);
 
@@ -442,13 +451,13 @@ $(document).ready(function(){
                         self.hidePending(form, self.showSuccess.bind(self, form));
 
                         if (resolve) {
-                            resolve.apply(self, [form, response]);
+                            resolve.call(self, form, response);
                         }
                     } else {
                         self.hidePending(form, self.showError.bind(self, form));
 
                         if (reject) {
-                            reject.apply(self, [form, response]);
+                            reject.call(self, form, response);
                         }
                     }
 
