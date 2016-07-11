@@ -32,6 +32,10 @@ body {
 header {
   min-height: 52px; }
 
+footer {
+  color: #aaaaac;
+  background-color: #222; }
+
 .container {
   max-width: 1200px;
   padding: 52px 15px; }
@@ -86,6 +90,7 @@ a, img {
  Navigation
 /* ---------------------------------------------- */
 .navbar {
+  width: 100%;
   min-height: 52px;
   font-weight: bold;
   color: #222;
@@ -103,6 +108,39 @@ a, img {
   .top-menu a {
     display: block;
     padding: 15px; }
+
+/* ----------------------------------------------
+ Footer
+ ---------------------------------------------- */
+footer .container {
+  padding: 30px 15px; }
+
+.footer__contact {
+  width: 50%;
+  float: left;
+  padding: 0 170px;
+  margin-bottom: 20px; }
+  .footer__contact span {
+    font-size: 14px;
+    float: left; }
+
+.footer__title {
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+.skype {
+  display: block;
+  width: 57px;
+  margin-right: 15px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+  .skype:hover {
+    -webkit-filter: none;
+    filter: none; }
+
+.copyright {
+  font-size: 14px;
+  text-align: center; }
 
 /* ----------------------------------------------
  Scroll Down
@@ -171,6 +209,8 @@ a, img {
  Home
  ---------------------------------------------- */
 .home {
+  position: relative;
+  min-height: 100vh;
   background: url("../images/cover.jpg") no-repeat fixed #222 50% 0;
   background-size: cover; }
 
@@ -213,6 +253,7 @@ a, img {
     padding-bottom: 20px; }
 
 .slider__block {
+  height: 555px;
   padding: 20px;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), -23px 0 20px -23px rgba(0, 0, 0, 0.8), 23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), -23px 0 20px -23px rgba(0, 0, 0, 0.8), 23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -245,8 +286,7 @@ a, img {
   width: 200px;
   height: 200px;
   line-height: 200px;
-  text-align: center;
-  border: 1px solid blue; }
+  text-align: center; }
   .chart canvas {
     position: absolute;
     top: 0;
@@ -304,17 +344,61 @@ figure {
   .courses + ul {
     padding-left: 10px; }
 
-.skype {
-  display: block;
-  width: 60px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
-  .skype:hover {
-    -webkit-filter: none;
-    filter: none; }
-
 .link {
   color: #4285f4; }
+
+.active {
+  color: #e7746f; }
+
+/* Form */
+form {
+  width: 50%;
+  padding: 20px 20px 120px; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  input:focus, textarea:focus {
+    border-color: #999; }
+
+input[type="submit"] {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #222;
+  border: none;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s; }
+  input[type="submit"]:hover {
+    background-color: #e7746f; }
+
+::-webkit-input-placeholder {
+  color: #666; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #666; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #666; }
+
+:-ms-input-placeholder {
+  color: #666; }
+
+.form-success {
+  border-color: #47ff22; }
+
+.form-fail {
+  border-color: #ff3928; }
 
 /*js classes */
 .hidden {
@@ -329,7 +413,7 @@ figure {
   position: fixed;
   width: 44px;
   height: 36px;
-  background-color: red;
+  background-color: #e7746f;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -343,7 +427,7 @@ figure {
   cursor: pointer;
   z-index: 20; }
   #scrollUp:hover {
-    background: black; }
+    background: #ad5757; }
   #scrollUp .upButton {
     position: absolute;
     top: 50%;

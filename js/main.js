@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    /*Fixed menu & smooth scroll to anchor */
+    /*Fixed menu */
     (function(){
-        /*Menu controller fixed & smooth scroll to anchor */
+        /*Menu controller fixed*/
         function FixedMenu(options) {
             this._menu = options.menu;
             this._fixedClass = options.fixedClass || 'js-top-fixed';
@@ -20,7 +20,6 @@ $(document).ready(function(){
                 $(window).scroll(self.toggleMenuPosition.bind(self));
             });
 
-            self.smoothScrollLink(this._menu);
             self.pageScrollListener();
         };
         FixedMenu.prototype.getCoords = function (elem) {
@@ -39,23 +38,6 @@ $(document).ready(function(){
                 $(this._menu).addClass(this._fixedClass);
                 this._menuIsFixed = true;
             }
-        };
-        FixedMenu.prototype.smoothScrollLink = function (selector) {
-            var self = this;
-
-            $('a[href^="#"]', $(selector)).click(function (e) {
-                e.preventDefault();
-
-                var target = this.hash;
-
-                if(! $(target)[0]) return;
-
-                $('html, body').stop().animate({
-                    'scrollTop' : $(target).offset().top - self._menu.offsetHeight
-                }, 500, 'swing', function () {
-                    window.location.hash = target;
-                });
-            });
         };
         FixedMenu.prototype.pageScrollListener = function () {
             var isActive = false;
@@ -116,10 +98,108 @@ $(document).ready(function(){
         });
 
         topMenu.init();
-
-        /*Scroll page anchor*/
-        topMenu.smoothScrollLink('.page-wrap');
     })();
+
+    /*scroll to anchor
+    * mmenu
+    * */
+    (function(){
+
+        function ScrollToAnchor(options) {
+            this._listenedBlock = options.listenedBlock || document.body;
+            this._translation = options.translation || 0;
+        }
+        ScrollToAnchor.prototype.init = function () {
+            this._listenedBlock.addEventListener('click', this.anchorClickListener.bind(this));
+        };
+        ScrollToAnchor.prototype.anchorClickListener = function (e) {
+            var elem = e.target;
+            var anchorWithHash = elem.closest('a[href^="#"]');
+
+            if (!anchorWithHash) return;
+            
+            e.preventDefault();
+
+            var target = anchorWithHash.hash;
+            var translation = anchorWithHash.hasAttribute('data-translation') ? +anchorWithHash.getAttribute('data-translation') : this._translation;
+
+            if(! document.querySelector(target)) return;
+
+            this.smoothScroll(target, translation);
+        };
+        ScrollToAnchor.prototype.smoothScroll = function (selector, translation) {
+            $("html, body").animate({
+                scrollTop: $(selector).offset().top - (translation || 0)},
+                500, 
+                function () {
+                    window.location.hash = selector;
+                }
+            );
+        };
+
+        var pageScroll = new ScrollToAnchor({
+            listenedBlock: document.querySelector('.page-wrap'),
+            translation:  document.querySelector('nav.navbar').offsetHeight
+        });
+        pageScroll.init();
+
+        var mmenuScroll = new ScrollToAnchor({
+            listenedBlock: document.getElementById('#m-menu'),
+            translation:  document.querySelector('nav.navbar').offsetHeight
+        });
+
+        /*mmenu*/
+        (function(){
+            setUpMmenu();
+
+            function setUpMmenu() {
+                var $menu = $('nav#m-menu');
+
+                $menu.mmenu({
+                    //extensions: ["effect-menu-slide", "effect-listitems-slide", "theme-dark"],
+                    //dragOpen: true,
+                    //preventTabbing: true,
+                    // navbar : false,
+                    /*onClick : {
+                     setSelected : false
+                     }*/
+
+                });
+
+
+                /*
+                $menu.on('click', function (e) {
+                    var elem = e.target;
+                    var target
+                });*/
+
+
+                var selector = false;
+
+                $menu.find( 'li > a' ).on(
+                    'click',
+                    function( e )
+                    {
+                        selector = this.hash;
+                    }
+                );
+
+                var api = $menu.data( 'mmenu' );
+                api.bind( 'closed',
+                    function() {
+                        if (selector) {
+                            mmenuScroll.smoothScroll(selector, mmenuScroll._translation);
+                            selector = false;
+                        }
+                    }
+
+                );
+            }
+        })();
+
+    })();
+
+
 
     /*ScrollUp button*/
     (function(){
@@ -419,7 +499,6 @@ $(document).ready(function(){
         profileForm.init();
     })();
 
-
     /*slider*/
     (function(){
     	$('.slider').slick({
@@ -427,16 +506,54 @@ $(document).ready(function(){
             infinite: true
         });
     })();
-
-
+    
     /*lighbox*/
     (function(){
         var lightBox = new Lightbox();
 
         lightBox.load();
     })();
+    
+
+    /*(function(){
+        /!*scroll class*!/
+        function ScrollToAnchor(options) {
+            this._listenedBlock = options.listenedBlock || document.body;
+            this._translation = options.translation || 0;
+        }
+        ScrollToAnchor.prototype.init = function () {
+            this._listenedBlock.addEventListener('click', this.anchorClickListener.bind(this));
+        };
+        ScrollToAnchor.prototype.anchorClickListener = function (e) {
+            var elem = e.target;
+            var anchorWithHash = elem.closest('a[href^="#"]');
+
+            if (!anchorWithHash) return;
+
+            e.preventDefault();
+
+            var target = anchorWithHash.hash;
+            var translation = anchorWithHash.hasAttribute('data-translation') ? +anchorWithHash.getAttribute('data-translation') : this._translation;
+
+            if(! document.querySelector(target)) return;
+
+            this.smoothScroll(target, translation);
+        };
+        ScrollToAnchor.prototype.smoothScroll = function (selector, translation) {
+            $("html, body").animate({
+                    scrollTop: $(selector).offset().top + (translation || 0)},
+                500,
+                function () {
+                    window.location.hash = selector;
+                }
+            );
+        };
 
 
+    })();*/
+    
+    
+    
     /*some old script*/
     (function(){
         /* ---------------------------------------------- /*

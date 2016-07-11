@@ -102,6 +102,10 @@ body {
 header {
   min-height: 52px;
 }
+footer {
+  color: #aaaaac;
+  background-color: $linksNav;
+}
 
 .container {
   max-width: 1200px;
@@ -164,6 +168,7 @@ a, img {
 /* ---------------------------------------------- */
 
 .navbar {
+  width: 100%;
   min-height: 52px;
   font-weight: bold;
   color: $linksNav;
@@ -188,6 +193,42 @@ a, img {
 }
 
 /* ----------------------------------------------
+ Footer
+ ---------------------------------------------- */
+
+footer .container {
+  padding: 30px 15px;
+}
+.footer__contact {
+  width: 50%;
+  float: left;
+  padding: 0 170px;
+  margin-bottom: 20px;
+  span {
+    font-size: 14px;
+    float: left;
+  }
+
+}
+.footer__title {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.skype {
+  display: block;
+  width: 57px;
+  margin-right: 15px;
+  @include filter(grayscale(100%));
+  &:hover {
+    @include filter(none);
+  }
+}
+.copyright {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ----------------------------------------------
  Scroll Down
  ---------------------------------------------- */
 
@@ -203,7 +244,7 @@ a, img {
   @include border-radius(50%);
   span{
     position: relative;
-    color: #fff;
+    color: $white;
     @include animation(drop 1s linear infinite);
     //  animation-name: drop; имя анимации //
     //animation-duration: 1s; продолжительность //
@@ -223,6 +264,8 @@ a, img {
  ---------------------------------------------- */
 
 .home {
+  position: relative;
+  min-height: 100vh;
   background: url("../images/cover.jpg") no-repeat fixed #222 50% 0;
   background-size: cover;
 }
@@ -268,6 +311,7 @@ a, img {
   }
 }
 .slider__block {
+  height: 555px;
   padding: 20px;
   @include box-shadow(0 1px 4px rgba(0, 0, 0, .3), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset);
   p {
@@ -303,7 +347,6 @@ a, img {
   height: 200px;
   line-height: 200px;
   text-align: center;
-  border: 1px solid blue;
   canvas {
     position: absolute; top: 0; left: 0;
   }
@@ -367,16 +410,64 @@ figure {
   }
 }
 
-.skype {
-  display: block;
-  width: 60px;
-  @include filter(grayscale(100%));
-  &:hover {
-    @include filter(none);
-  }
-}
+
 .link {
   color: #4285f4;
+}
+.active {
+  color: $hoverLinks;
+}
+
+/* Form */
+
+form {
+  width: 50%;
+  padding: 20px 20px 120px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  @include box-shadow(none);
+  &:focus {
+    border-color: $links;
+  }
+}
+input[type="submit"] {
+  font-size: 18px;
+  color: $white;
+  text-transform: uppercase;
+  background-color: $linksNav;
+  border: none;
+  @include transition(all 0.2s ease-in-out 0s);
+  &:hover {
+    background-color: $hoverLinks;
+  }
+}
+::-webkit-input-placeholder {
+  color: $fcMain;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $fcMain;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $fcMain;
+}
+
+:-ms-input-placeholder {
+  color:$fcMain;
+}
+
+.form-success {
+  border-color: #47ff22;
+}
+.form-fail {
+  border-color: #ff3928;
 }
 
 /*js classes */
@@ -394,7 +485,7 @@ figure {
   position: fixed;
   width: 44px;
   height: 36px;
-  background-color: red;
+  background-color: $hoverLinks;
   @include border-radius(5px);
   right: 10px;
   bottom: -40px;
@@ -403,7 +494,7 @@ figure {
   cursor: pointer;
   z-index: 20;
   &:hover {
-    background: black;
+    background: #ad5757;
   }
   .upButton {
     position: absolute;

@@ -762,9 +762,9 @@ function Lightbox() {
             newImgHeight = currImage.originalHeight;
             newImgWidth = currImage.originalWidth;
         }
-        currImage.img.setAttribute('width', newImgWidth);
-        currImage.img.setAttribute('height', newImgHeight);
-        currImage.img.setAttribute('style', 'margin-top:' + ((getHeight() - newImgHeight) / 2) + 'px');
+        currImage.img.style.width = newImgWidth + 'px';
+        currImage.img.style.height = newImgHeight + 'px';
+        currImage.img.style.marginTop = (getHeight() - newImgHeight) / 2 + 'px';
 
         // reposition controls after timeout
         setTimeout(repositionControls, 200);
