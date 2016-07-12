@@ -109,28 +109,12 @@ a, img {
     display: block;
     padding: 15px;
     outline: none; }
-
-#m-menu:not(.mm-menu) {
-  display: none; }
-
-#m-menu-btn-wrapper {
-  padding: 0;
-  background-color: #fff;
-  width: 100%;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  z-index: 50; }
-
-.menu-button {
-  cursor: pointer;
-  padding: 0; }
+  .top-menu .menu-button {
+    display: none;
+    padding: 0; }
 
 .hamburger {
-  padding: 13px 15px;
-  background-color: #fff;
-  width: 70px;
-  margin: 0; }
+  padding: 13px 15px; }
 
 .hamburger-box {
   width: 40px;
@@ -171,7 +155,7 @@ a, img {
     -o-transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
-html.mm-opening .hamburger--collapse .hamburger-inner {
+.hamburger--collapse.is-active .hamburger-inner {
   -ms-transform: translate3d(0, -10px, 0) rotate(-45deg);
   -moz-transform: translate3d(0, -10px, 0) rotate(-45deg);
   -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
@@ -182,7 +166,7 @@ html.mm-opening .hamburger--collapse .hamburger-inner {
   -o-transition: transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-html.mm-opening .hamburger--collapse .hamburger-inner::after {
+.hamburger--collapse.is-active .hamburger-inner::after {
   top: 0;
   opacity: 0;
   -webkit-transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear;
@@ -190,7 +174,7 @@ html.mm-opening .hamburger--collapse .hamburger-inner::after {
   -o-transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear;
   transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear; }
 
-html.mm-opening .hamburger--collapse .hamburger-inner::before {
+.hamburger--collapse.is-active .hamburger-inner::before {
   top: 0;
   -ms-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -208,28 +192,14 @@ html.mm-opening .hamburger--collapse .hamburger-inner::before {
 footer .container {
   padding: 30px 15px; }
 
-.footer__contact {
-  width: 50%;
-  float: left;
-  padding-left: 15%;
-  margin-bottom: 20px; }
-  .footer__contact span {
-    font-size: 14px;
-    float: left; }
-
-.footer__title {
-  margin-bottom: 10px;
-  font-weight: bold; }
-
-.skype {
-  display: block;
-  width: 57px;
-  margin-right: 15px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
-  .skype:hover {
-    -webkit-filter: none;
-    filter: none; }
+.footer__social {
+  padding-right: 50px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: right; }
+  .footer__social a {
+    padding: 5px 10px;
+    margin-right: 10px; }
 
 .copyright {
   font-size: 14px;
@@ -445,10 +415,36 @@ figure {
 .active {
   color: #e7746f; }
 
+/* ----------------------------------------------
+ Contacts
+ ---------------------------------------------- */
+.contacts__footer {
+  width: 50%;
+  float: left;
+  padding-left: 15%;
+  margin-bottom: 20px; }
+  .contacts__footer span {
+    font-size: 14px;
+    float: left; }
+
+.contacts__title {
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+.skype {
+  display: block;
+  width: 57px;
+  margin-right: 15px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+  .skype:hover {
+    -webkit-filter: none;
+    filter: none; }
+
 /* Form */
 form {
   width: 50%;
-  padding: 20px 20px 100px; }
+  padding: 20px 20px 50px; }
 
 input, textarea {
   width: 100%;
@@ -543,11 +539,13 @@ input[type="submit"] {
 
 /* MEDIA */
 @media (max-width: 960px) {
-  header {
-    display: none; }
-
-  #m-menu-btn-wrapper {
-    visibility: visible; }
+  .top-menu {
+    float: left;
+    padding-left: 20px; }
+    .top-menu li + li {
+      display: none; }
+    .top-menu .menu-button {
+      display: block; }
 
   .slider {
     max-width: 600px;
@@ -570,7 +568,7 @@ input[type="submit"] {
   form {
     width: 70%; }
 
-  .footer__contact {
+  .contacts__footer {
     padding-left: 5%; } }
 @media (max-width: 600px) {
   h1 {
@@ -620,7 +618,10 @@ input[type="submit"] {
     width: 100%;
     padding-bottom: 50px; }
 
-  .footer__contact {
-    width: 100%; } }
+  .contacts__footer {
+    width: 100%; }
+
+  .footer__social {
+    text-align: left; } }
 
 /*# sourceMappingURL=styles.css.map */
