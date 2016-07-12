@@ -3,7 +3,7 @@
 **/
 /* IE8 Stuff   */
 .jslghtbx-ie8.jslghtbx {
-  background-image: url("img_lightbox/trans-bck.png");
+  background-image: url("../service_img/img_lightbox/trans-bck.png");
   display: none; }
   .jslghtbx-ie8.jslghtbx.jslghtbx-active {
     display: block; }
@@ -29,7 +29,7 @@
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.85); }
 
-/* loading-animation*/
+/* loading-animation */
 .jslghtbx-loading-animation {
   margin-top: -60px;
   margin-left: -60px;
