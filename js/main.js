@@ -162,7 +162,7 @@ $(document).ready(function(){
                 translation:  document.querySelector('#m-menu-btn-wrapper').offsetHeight
             });
 
-            console.log(document.querySelector('#m-menu-btn-wrapper').offsetHeight);
+            //console.log(document.querySelector('#m-menu-btn-wrapper').offsetHeight);
 
             setUpMmenu();
 

@@ -109,12 +109,28 @@ a, img {
     display: block;
     padding: 15px;
     outline: none; }
-  .top-menu .menu-button {
-    display: none;
-    padding: 0; }
+
+#m-menu:not(.mm-menu) {
+  display: none; }
+
+#m-menu-btn-wrapper {
+  padding: 0;
+  background-color: #fff;
+  width: 100%;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 50; }
+
+.menu-button {
+  cursor: pointer;
+  padding: 0; }
 
 .hamburger {
-  padding: 13px 15px; }
+  padding: 13px 15px;
+  background-color: #fff;
+  width: 70px;
+  margin: 0; }
 
 .hamburger-box {
   width: 40px;
@@ -155,7 +171,7 @@ a, img {
     -o-transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
-.hamburger--collapse.is-active .hamburger-inner {
+html.mm-opening .hamburger--collapse .hamburger-inner {
   -ms-transform: translate3d(0, -10px, 0) rotate(-45deg);
   -moz-transform: translate3d(0, -10px, 0) rotate(-45deg);
   -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
@@ -166,7 +182,7 @@ a, img {
   -o-transition: transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-.hamburger--collapse.is-active .hamburger-inner::after {
+html.mm-opening .hamburger--collapse .hamburger-inner::after {
   top: 0;
   opacity: 0;
   -webkit-transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear;
@@ -174,7 +190,7 @@ a, img {
   -o-transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear;
   transition: top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear; }
 
-.hamburger--collapse.is-active .hamburger-inner::before {
+html.mm-opening .hamburger--collapse .hamburger-inner::before {
   top: 0;
   -ms-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -539,13 +555,11 @@ input[type="submit"] {
 
 /* MEDIA */
 @media (max-width: 960px) {
-  .top-menu {
-    float: left;
-    padding-left: 20px; }
-    .top-menu li + li {
-      display: none; }
-    .top-menu .menu-button {
-      display: block; }
+  header {
+    display: none; }
+
+  #m-menu-btn-wrapper {
+    visibility: visible; }
 
   .slider {
     max-width: 600px;
