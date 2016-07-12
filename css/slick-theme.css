@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url("./img_slick/ajax-loader.gif") center no-repeat; }
+  background: #fff url("./../service_img/img_slick/ajax-loader.gif") center no-repeat; }
 
 /* Icons */
 @font-face {
@@ -71,12 +71,9 @@
       content: "←"; }
 
 /* Dots */
-.slick-dotted.slick-slider {
-  margin-bottom: 30px; }
-
 .slick-dots {
   position: absolute;
-  bottom: -25px;
+  bottom: 5px;
   left: 0;
   list-style: none;
   display: block;
