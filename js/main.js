@@ -169,14 +169,12 @@ $(document).ready(function(){
 
                 $menu.mmenu({
                     //extensions: ["effect-menu-slide", "effect-listitems-slide", "theme-dark"],
-                    //dragOpen: true,
-                    //preventTabbing: true,
+                    dragOpen: true,
+                    preventTabbing: true
                     // navbar : false,
-                    /*onClick : {
-                     setSelected : false
-                     }*/
-
-                });
+                    //onClick : {
+                     //setSelected : false
+                     });
 
 
                 /*
