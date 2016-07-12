@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en"> <!-- на русском сайте убрать en во всех html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- для респонсив дизайна -->
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content grey">
+        <header>
+      <p>Портфолио Дмитрия Луценко и <span>Евгении Омельченко</span></p>
+      <br>
+      <nav id="top-menu">
+          <ul>
+              <li class="active"><a href="index.html">Портфолио</a></li>
+              <li><a href="about.html">О нас</a></li>
+          </ul>
+      </nav>
+      </header>
+      <div id="toggle">
+          <a href="" target="myFrame" id="prev" class="slider-nav sl-left-arrow"></a>
+          <a href="" target="myFrame" id="next" class="slider-nav sl-right-arrow"></a>
+          <a href="frame.html" target="myFrame" id="close" class="slider-nav-close"></a>
+      </div>
+      <iframe src="frame.html" id="mainFrame" name="myFrame">Ваш браузер не поддерживает фреймы.</iframe>
+    </div> <!-- content -->
+  <footer>
+      <a href="https://www.facebook.com/profile.php?id=100001367379881" class="social-icon facebook"></a>
+      <a href="https://github.com/Lutsman" class="social-icon git"></a>
+  </footer>
+</div> <!-- wrapper -->
+</body>
+</html>

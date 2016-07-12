@@ -1,0 +1,180 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font: 200 16px Arial, sans-serif;
+    color: #000;
+	
+}
+#headline, #pictures {
+    background-color: #e9e9e9;
+}
+#headline img, #pictures div img {
+    width: 100%;
+}
+#headline h1, #headline h2, #headline p {
+    padding: 0 0.5em;
+}
+h1 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1em;
+    text-align: center;
+}
+.friends {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    display: inline-block;
+    background: url(../images/duck.jpg) no-repeat;
+}
+.container {
+    margin: auto;
+}
+#creation {
+    padding: 20px 0;
+}
+#pictures {
+    padding: 20px 0 0;
+}
+ h2 {
+
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+}
+#creation video {
+    width: 100%;
+}
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #222;
+}
+.social-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 25px;
+    display: inline-block;
+    background: url(../images/social.png) no-repeat;
+}
+.social-icon:last-child {
+    margin-right: 0;
+}
+.vk {
+    background-position: 0 0;
+}
+.ok {
+    background-position: -32px 0;
+}
+.facebook {
+    background-position: -64px 0;
+}
+.instagram {
+    background-position: -96px 0;
+}
+
+/* Для средних экранов 600-980 */
+
+@media screen and (min-width: 600px) {
+
+    #headline {
+        font-size: 18px;
+    }
+    .container {
+        width: 550px;
+        margin: auto;
+        padding: 0 5%;
+    }
+    #headline img {
+        min-width: 100%;
+    }
+    #headline br {
+        clear: both;
+    }
+    #info {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    #family {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    #creation {
+        padding: 10px 10% 50px;
+    }
+    #pictures {
+        padding: 50px 10%;
+    }
+    h1 {
+        padding: 30px;
+        font-size: 44px;
+        text-shadow: #bfbfbf -1px 1px 0, #bfbfbf -2px 2px 0,
+        #bfbfbf -3px 3px 0, #bfbfbf -4px 4px 0,
+        #bfbfbf -5px 5px 0;
+    }
+    h2 {
+        margin-top: 0;
+        font-size: 26px;
+    }
+    #creation p {
+        font-size: 24px;
+    }
+    #creation video {
+        width: 80%;
+        padding: 0 10%;
+    }
+
+    #creation br {
+        clear: both;
+    }
+    #pictures div img {
+        width: 30%;
+        margin: 1%;
+        box-sizing: border-box;
+        border-radius: 50% 50%;
+        box-shadow: #000 0 0 7px;
+    }
+}
+
+/* Для больших экранов 980 + */
+
+@media screen and (min-width: 980px) {
+    .container {
+        max-width: 400px;
+    }
+    #headline img {
+        width: 400px;
+        min-width: 100%;
+    }
+    #info .container {
+        padding-right: 0;
+        margin-right: 0;
+    }
+    #family .container {
+        margin-left: 0;
+    }
+    #info {
+        width: 50%;
+        float: left;
+    }
+    #family {
+        width: 50%;
+        float: right;
+    }
+    #creation {
+        padding: 10px 15% 50px;
+    }
+    #pictures {
+        padding: 50px 15%;
+    }
+    h1 {
+        font-size: 48px;
+    }
+    h2 {
+        font-size: 36px;
+    }
+}

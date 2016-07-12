@@ -1,0 +1,1248 @@
+@charset "UTF-8";
+/* ----------------------------------------------
+ Connect fonts
+ ---------------------------------------------- */
+/* font-family: "CuprumRegular"; */
+@font-face {
+  font-family: "CuprumRegular";
+  src: url("../fonts/Cuprum-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+/* font-family: "CuprumBold"; */
+@font-face {
+  font-family: "CuprumBold";
+  src: url("../fonts/Cuprum-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+/* font-family: "CuprumItalic"; */
+@font-face {
+  font-family: "CuprumItalic";
+  src: url("../fonts/Cuprum-Italic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+/* font-family: "CuprumBoldItalic"; */
+@font-face {
+  font-family: "CuprumBoldItalic";
+  src: url("../fonts/Cuprum-BoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+/* font-family: "IsadoraBold"; */
+@font-face {
+  font-family: "Isadora";
+  src: url("../fonts/PG_ISADO.TTF") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+/* ----------------------------------------------
+ Reset
+ ---------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0 auto; }
+
+/* ----------------------------------------------
+ Main
+ ---------------------------------------------- */
+html, body {
+  height: 100%; }
+
+html, body, .wrapper {
+  width: 100%;
+  min-width: 1024px; }
+
+body {
+  position: relative;
+  float: left;
+  font: 14px Arial, sans-serif; }
+
+.wrapper {
+  position: relative;
+  float: left;
+  overflow: hidden; }
+
+header, footer, section {
+  width: 1024px;
+  min-width: 1024px;
+  position: relative; }
+
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none !important; }
+
+/* ----------------------------------------------
+ Fonts Paragrahps
+ ---------------------------------------------- */
+h2 {
+  font: 36px "CuprumRegular";
+  color: #515151;
+  text-align: center; }
+
+h3 {
+  margin: 4px 0 7px 2px;
+  font: 24px "CuprumRegular"; }
+
+sup {
+  font-size: 8px;
+  letter-spacing: normal; }
+
+/* ----------------------------------------------
+ Form Buttons Inputs Links Img
+ ---------------------------------------------- */
+a, .btn, input[type=submit] {
+  cursor: pointer; }
+
+a {
+  text-decoration: none; }
+
+a.fancybox-close {
+  opacity: 0.8; }
+  a.fancybox-close:hover {
+    opacity: 1; }
+
+li {
+  list-style-type: none; }
+
+.btn {
+  height: 35px;
+  display: block;
+  font: 17px/35px "CuprumRegular";
+  color: #fffefe;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #903f41;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+  .btn:hover {
+    background-color: #c23436; }
+
+.btn-call {
+  width: 190px;
+  margin: 10px 0 0 3px; }
+  .btn-call:hover {
+    color: #fff; }
+
+.btn-request {
+  width: 174px;
+  margin-top: 8px; }
+
+input {
+  width: 357px;
+  height: 39px;
+  padding-left: 16px;
+  margin-bottom: 7px;
+  background-color: #fff;
+  border: 2px solid #cab3a3;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  input:focus {
+    border-color: #845636; }
+
+input[type=submit] {
+  width: 356px;
+  height: 50px;
+  padding-left: 0;
+  margin: 10px 0 12px;
+  font: 24px "CuprumBold";
+  color: #fff;
+  letter-spacing: 1px;
+  background-color: #901416;
+  border: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+  input[type=submit]:hover {
+    background-color: #c23436; }
+
+/* button scroll up */
+#scrlup {
+  position: fixed;
+  opacity: 0.8;
+  background: #901416;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  right: 10px;
+  bottom: -40px;
+  display: none;
+  cursor: pointer;
+  z-index: 20; }
+
+.upButton {
+  padding: 10px 15px;
+  opacity: 1;
+  display: block;
+  color: #fff; }
+
+/* ----------------------------------------------
+ Animation
+ ---------------------------------------------- */
+.animated {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+
+.delay-01s {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+
+.delay-02s {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+.delay-04s {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+.delay-05s {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s; }
+
+.delay-08s {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s; }
+
+/* ----------------------------------------------
+ Header
+ ---------------------------------------------- */
+header {
+  height: 126px;
+  padding: 15px 0;
+  overflow-y: hidden;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  header div {
+    float: left; }
+
+.logo a {
+  width: 235px;
+  height: 81px;
+  margin-top: 4px;
+  display: block;
+  font: 22px/25px "CuprumRegular";
+  color: #666; }
+  .logo a span {
+    padding-left: 14px; }
+  .logo a i {
+    margin-top: 6px;
+    margin-left: -4px;
+    display: block;
+    font: 36px/28px "Isadora";
+    color: #901416; }
+    .logo a i span {
+      padding-right: 3px;
+      float: right; }
+
+.text-header {
+  margin: 22px 49px 0 53px;
+  font: 24px "CuprumBold";
+  color: #333;
+  text-align: center; }
+  .text-header i {
+    padding-top: 10px;
+    margin-left: -4px;
+    display: block;
+    font: 17px "CuprumItalic"; }
+
+.schedule {
+  font: 14px "CuprumRegular";
+  color: #333; }
+  .schedule p, .schedule .big {
+    font-size: 16px; }
+  .schedule p.title {
+    width: 96px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    border-bottom: 3px double #acacac; }
+  .schedule p.big {
+    padding: 1px 0 1px 18px; }
+  .schedule span, .schedule p.big {
+    font-family: "CuprumBold"; }
+  .schedule .big {
+    letter-spacing: 0.5px; }
+
+.contacts {
+  width: 193px;
+  margin: -9px 0 0 38px;
+  position: absolute;
+  right: 0;
+  font: 26px "CuprumBold";
+  text-align: center; }
+  .contacts i {
+    font: 17px "CuprumItalic"; }
+
+/* ----------------------------------------------
+ Footer
+ ---------------------------------------------- */
+footer {
+  height: 192px;
+  padding: 30px 0 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  footer div {
+    float: left; }
+  footer p, footer .text-footer, footer .schedule, footer .contacts i, footer a {
+    color: #dfc1c1; }
+  footer p a, footer .text-footer a {
+    text-decoration: underline; }
+  footer p.develop {
+    margin: 22px 12px 0 0;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 320px; }
+    footer p.develop a:hover {
+      color: #cf9b99; }
+  footer .schedule p.title {
+    border-bottom-color: #ae8888; }
+  footer .contacts {
+    margin-left: 67px;
+    color: #fff; }
+
+.logo-footer a, .logo-footer a i {
+  color: #dfc1c1; }
+
+.text-footer {
+  padding-top: 8px;
+  margin: 0 50px 0 85px;
+  font-size: 18px;
+  line-height: 24px; }
+  .text-footer a {
+    font-size: 13px; }
+    .text-footer a:hover {
+      color: #cf9b99; }
+
+.questions {
+  padding-left: 110px;
+  height: 141px;
+  font: 60px/141px "CuprumRegular";
+  color: #523d3d;
+  text-transform: uppercase; }
+  .questions a {
+    padding-bottom: 4px;
+    position: relative;
+    bottom: 10px;
+    left: 21px;
+    font: 20px Arial, sans-serif;
+    color: #845636;
+    text-transform: none;
+    border-bottom: 1px dashed #845636; }
+    .questions a:hover {
+      color: #cf9b99; }
+
+/* ----------------------------------------------
+ Navigation
+ ---------------------------------------------- */
+.menu {
+  height: 51px;
+  margin: 20px 12px 21px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ba9f9e;
+  border-bottom: 1px solid #ba9f9e;
+  z-index: 20; }
+  .menu li {
+    height: 49px;
+    display: inline-block; }
+    .menu li a {
+      padding: 15px 9px 13px;
+      display: block;
+      font: 17px "CuprumRegular";
+      color: #fff; }
+      .menu li a:hover {
+        color: #cf9b99; }
+
+.ornament {
+  width: 1024px;
+  height: 92px;
+  position: absolute;
+  top: -20px;
+  background: url("../images/sprite.png") no-repeat 484px -219px; }
+
+#topMenu {
+  height: 92px;
+  position: absolute;
+  top: 126px;
+  z-index: 6; }
+
+.after-top-menu {
+  margin-top: 92px; }
+
+/* ----------------------------------------------
+Orders
+---------------------------------------------- */
+.order {
+  width: 1024px;
+  height: 546px;
+  font-size: 10px;
+  color: #4b4b4b;
+  text-align: right; }
+  .order b {
+    padding-right: 5px;
+    display: block;
+    font-size: 18px; }
+    .order b span {
+      padding-right: 6px; }
+  .order i {
+    font-size: 16px;
+    padding-right: 5px; }
+  .order p:last-child {
+    letter-spacing: -0.3px; }
+
+.slogan {
+  padding: 20px 0 22px;
+  font: 38px/46px "CuprumBold"; }
+  .slogan span {
+    padding-right: 12px; }
+
+.order-2 {
+  height: 570px;
+  color: #c5c7ca; }
+  .order-2 i {
+    color: #a44749; }
+  .order-2 .slogan {
+    padding-top: 55px; }
+  .order-2 .order-form {
+    margin-top: 21px; }
+
+.order-form {
+  width: 434px;
+  height: 274px;
+  margin: 31px 10px 0 0;
+  float: right;
+  color: #4b4b4b;
+  text-align: center;
+  background-color: #e1d0c4;
+  border: 5px solid #bba18e;
+  -moz-box-shadow: inset 1px 1.732px 3px 0 rgba(0, 3, 1, 0.294);
+  -webkit-box-shadow: inset 1px 1.732px 3px 0 rgba(0, 3, 1, 0.294);
+  box-shadow: inset 1px 1.732px 3px 0 rgba(0, 3, 1, 0.294); }
+  .order-form .form-title {
+    height: 56px;
+    display: block;
+    font: 20px/46px "CuprumBold";
+    background: url("../images/sprite.png") no-repeat 35px -126px; }
+
+form {
+  width: 357px;
+  margin-top: 3px;
+  text-align: left; }
+  form p {
+    padding-left: 10px;
+    font-size: 13px; }
+  form span {
+    margin-left: -4px;
+    color: #d41f22; }
+
+/* ----------------------------------------------
+Repair
+---------------------------------------------- */
+.repair-clothes {
+  height: 456px; }
+  .repair-clothes h2 {
+    padding: 52px 0; }
+
+.container {
+  font: 18px "CuprumRegular"; }
+  .container p {
+    margin-top: 27px;
+    color: #666;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+  .container div {
+    width: 216px;
+    position: relative;
+    float: left;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .container div:hover {
+      -ms-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+      z-index: 5; }
+      .container div:hover p {
+        margin-top: 15px; }
+  .container div + div {
+    margin-left: 45px; }
+  .container div:first-child {
+    padding-left: 12px; }
+  .container img {
+    position: relative;
+    display: block;
+    z-index: 2; }
+  .container .top {
+    width: 206px;
+    height: 226px;
+    position: absolute;
+    display: block;
+    top: -10px;
+    right: 10px;
+    border: 5px solid rgba(240, 231, 225, 0.6);
+    z-index: 3; }
+  .container .bottom {
+    width: 206px;
+    height: 226px;
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: -10px;
+    border: 5px solid #917e7e;
+    z-index: 1; }
+
+/* ----------------------------------------------
+Services
+---------------------------------------------- */
+.our-services {
+  height: 450px; }
+  .our-services h2 {
+    padding: 24px 0 51px; }
+
+/* ----------------------------------------------
+Exclusive-services
+---------------------------------------------- */
+.excl-services {
+  height: 465px; }
+  .excl-services h2 {
+    padding: 33px 0 51px; }
+  .excl-services .container div {
+    width: 262px; }
+  .excl-services .container div:first-child {
+    margin-left: 130px; }
+  .excl-services .container div + div {
+    margin-left: 216px; }
+  .excl-services .top, .excl-services .bottom {
+    width: 252px; }
+
+/* ----------------------------------------------
+Problems
+---------------------------------------------- */
+.m-problems {
+  height: 639px; }
+  .m-problems h2 {
+    padding: 41px 0 52px;
+    color: #654949; }
+  .m-problems h3 {
+    color: #901416; }
+
+.column {
+  width: 50%;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .column p {
+    margin-bottom: 17px;
+    color: #333; }
+
+.c-pd-t {
+  padding-top: 344px; }
+
+.pd-l {
+  padding-left: 12px; }
+
+.icon {
+  width: 49px;
+  height: 38px;
+  margin-left: 0;
+  background: url("../images/sprite.png") no-repeat; }
+
+.red-1 {
+  background-position: -224px 0; }
+
+.red-2 {
+  background-position: -168px 0; }
+
+.red-3 {
+  background-position: -112px 0; }
+
+.red-4 {
+  background-position: -56px 0; }
+
+.red-5 {
+  background-position: 0 0; }
+
+/* ----------------------------------------------
+We-make
+---------------------------------------------- */
+.make {
+  height: 684px; }
+  .make h2 {
+    padding: 52px 0; }
+  .make h2, .make h3 {
+    color: #654949; }
+
+.c-pd-t-m {
+  padding-top: 245px; }
+
+.brown-1 {
+  background-position: 0 -56px; }
+
+.brown-2 {
+  background-position: -56px -56px; }
+
+.brown-3 {
+  background-position: -112px -56px; }
+
+.brown-4 {
+  background-position: -168px -56px; }
+
+.brown-5 {
+  background-position: -224px -56px; }
+
+.brown-6 {
+  background-position: -280px -56px; }
+
+/* ----------------------------------------------
+Scheme-work
+---------------------------------------------- */
+.work-top {
+  height: 106px; }
+  .work-top h2 {
+    line-height: 110px; }
+
+.work {
+  height: 604px;
+  text-align: center; }
+  .work p {
+    font: 18px/26px "CuprumRegular";
+    color: #515151; }
+  .work span {
+    font: 30px "CuprumBold";
+    color: #611512; }
+
+.bg-scheme {
+  width: 652px;
+  height: 421px;
+  top: 75px;
+  right: 176px;
+  background: url("../images/schemeOfWork.png") no-repeat; }
+
+.work-block {
+  position: absolute; }
+
+.wb-1 {
+  top: 231px;
+  left: 26px; }
+
+.wb-2 {
+  top: 8px;
+  left: 308px; }
+
+.wb-3 {
+  top: 7px;
+  left: 568px; }
+
+.wb-4 {
+  top: 231px;
+  left: 846px; }
+
+.wb-5 {
+  top: 492px;
+  left: 577px; }
+
+.wb-6 {
+  top: 492px;
+  left: 307px; }
+
+/* ----------------------------------------------
+Trust
+---------------------------------------------- */
+.trust-us {
+  height: 490px; }
+  .trust-us h2 {
+    padding: 42px 0 50px; }
+  .trust-us i {
+    font: 20px "CuprumBoldItalic"; }
+  .trust-us .top, .trust-us .bottom {
+    width: 436px; }
+  .trust-us .container div {
+    width: 446px; }
+  .trust-us .container div:first-child {
+    margin-left: 20px; }
+  .trust-us .container div + div {
+    margin-left: 68px; }
+  .trust-us .container p {
+    line-height: 26px; }
+
+/* ----------------------------------------------
+Reviews
+---------------------------------------------- */
+.reviews-client {
+  height: 823px; }
+  .reviews-client h2 {
+    padding: 42px 0 50px;
+    color: #fff; }
+  .reviews-client .block {
+    height: 370px; }
+  .reviews-client .block-2 {
+    height: 319px; }
+  .reviews-client .container {
+    font: 14px Arial, sans-serif; }
+    .reviews-client .container div:hover p {
+      margin-top: -14px; }
+  .reviews-client .empty {
+    height: 20px;
+    line-height: 20px;
+    padding-top: 20px;
+    display: block; }
+  .reviews-client .rev {
+    width: 215px;
+    margin-left: 40px;
+    text-align: left; }
+    .reviews-client .rev p {
+      padding-bottom: 8px;
+      margin-top: -14px;
+      font: 20px "CuprumBoldItalic";
+      color: #fff; }
+    .reviews-client .rev i {
+      color: #e9d8d7;
+      line-height: 18px;
+      letter-spacing: -0.2px; }
+  .reviews-client .rev-2 {
+    margin: 0;
+    text-align: right; }
+
+/* ----------------------------------------------
+Our-works
+---------------------------------------------- */
+.our-product-top {
+  height: 95px; }
+  .our-product-top h2 {
+    line-height: 107px; }
+
+.our-product {
+  height: 500px;
+  width: 100%;
+  max-width: 1980px; }
+  .our-product .top {
+    width: 200%;
+    height: 100%;
+    top: 35px;
+    right: 807px;
+    border-color: #e1d0c4; }
+  .our-product .bottom {
+    width: 200%;
+    height: 100%;
+    top: 55px;
+    right: 777px;
+    border-color: #634747; }
+
+.l-box {
+  width: 100%;
+  height: 294px;
+  position: relative;
+  top: 88px;
+  z-index: 5; }
+  .l-box div {
+    margin: 10px; }
+
+/* ----------------------------------------------
+Consultation
+---------------------------------------------- */
+.consultation {
+  height: 525px;
+  padding-left: 14px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .consultation .block {
+    width: 50%;
+    float: left; }
+  .consultation .cons-p {
+    padding-top: 29px;
+    font: 38px "CuprumBold";
+    color: #901416; }
+  .consultation li {
+    padding: 13px 0;
+    font-size: 18px;
+    list-style: disc inside; }
+    .consultation li b {
+      margin-left: -5px; }
+  .consultation .slogan {
+    padding: 3px 0 11px;
+    font: 36px "CuprumBold";
+    color: #333; }
+  .consultation .order-form {
+    height: 298px;
+    margin: 41px 60px 0 0; }
+    .consultation .order-form p:last-child {
+      font-size: 10px;
+      color: #4b4b4b;
+      letter-spacing: -0.3px; }
+  .consultation form {
+    margin-top: 0; }
+  .consultation .form-title {
+    height: 79px;
+    padding-top: 5px;
+    font: 20px "CuprumBold";
+    background-position: 35px -103px; }
+    .consultation .form-title span {
+      font-size: 24px;
+      line-height: 34px; }
+
+.cons-title {
+  padding-top: 32px;
+  font: 38px "CuprumBold";
+  color: #634747;
+  text-transform: uppercase; }
+
+.arrow {
+  width: 160px;
+  height: 80px;
+  position: absolute;
+  top: 419px;
+  right: 465px;
+  background: url("../images/sprite.png") no-repeat 0 -392px;
+  z-index: 3; }
+
+/* ----------------------------------------------
+Contacts
+---------------------------------------------- */
+.our-contacts {
+  height: 630px; }
+  .our-contacts h2 {
+    line-height: 128px; }
+  .our-contacts .top {
+    width: 314px;
+    height: 320px;
+    top: 175px;
+    right: 93px;
+    border-color: rgba(225, 208, 196, 0.9); }
+  .our-contacts .bottom {
+    width: 314px;
+    height: 320px;
+    top: 195px;
+    right: 73px;
+    border-color: #634747; }
+
+.info {
+  width: 324px;
+  height: 330px;
+  padding: 25px 0 0 40px;
+  top: 185px;
+  right: 83px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.949);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 2; }
+  .info h3 {
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: #634747; }
+  .info p {
+    margin-top: 15px;
+    font: 18px "CuprumRegular"; }
+  .info span {
+    padding-top: 7px;
+    display: block;
+    line-height: 18px; }
+  .info b {
+    padding-top: 2px;
+    padding-bottom: 1px;
+    display: block;
+    font-size: 24px;
+    color: #666;
+    line-height: 24px; }
+  .info i {
+    line-height: 32px; }
+
+.info-text {
+  background-color: transparent;
+  z-index: 5; }
+
+.map {
+  width: 100%;
+  height: 525px;
+  position: absolute;
+  top: 105px;
+  z-index: 1; }
+
+/* ----------------------------------------------
+Thanks-page
+---------------------------------------------- */
+.thanks-content {
+  min-height: 100%;
+  height: 100%;
+  margin-bottom: -203px;
+  /*высота футера*/
+  padding: 126px 0 203px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .thanks-content .bg-order-1 {
+    background-size: cover;
+    height: 100%; }
+
+.thanks {
+  height: inherit; }
+  .thanks div {
+    width: 510px;
+    height: 120px;
+    margin-top: -60px;
+    position: relative;
+    top: 50%;
+    right: -219px;
+    text-align: center; }
+  .thanks h2 {
+    padding-bottom: 22px;
+    font: 38px "CuprumBold";
+    color: #6e4947; }
+  .thanks b {
+    padding-left: 11px;
+    color: #4a4a4a; }
+
+/*footer*/
+.f-thk {
+  height: 203px; }
+
+/* ----------------------------------------------
+ Colors Backgrounds
+ ---------------------------------------------- */
+.bg-repair, .bg-exclusive-services, .bg-scheme-work-top, .bg-trust, .bg-our-works-top, .bg-contacts, .bg-footer-top {
+  background-color: #fff; }
+
+.bg-header, .bg-services, .bg-scheme-work, .bg-our-works {
+  background: url("../images/atelierPinkTopBG.jpg"); }
+
+.bg-nav {
+  background: url("../images/atelierBrownTopMenuBG.jpg");
+  z-index: 6; }
+
+.bg-order-1 {
+  background: url("../images/ladyBG1.jpg") no-repeat center top; }
+
+.bg-order-2 {
+  background: url("../images/ladyBG2.jpg") no-repeat center top; }
+
+.bg-problems {
+  background: url("../images/ladyBG3.jpg") no-repeat center top; }
+
+.bg-make {
+  background: url("../images/ladyBG4.jpg") no-repeat center top; }
+
+.bg-order-3 {
+  background: url("../images/ladyBG5.jpg") no-repeat center top; }
+
+.bg-reviews {
+  background: url("../images/furCoatBG.jpg"); }
+
+.bg-consultation {
+  background: url("../images/ladyBG6.jpg") no-repeat center top; }
+
+.bg-footer {
+  background-color: #664c4c; }
+
+.red {
+  color: #901416; }
+
+/* ----------------------------------------------
+Slider
+---------------------------------------------- */
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("../images/ajax-loader.gif") center no-repeat; }
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("../fonts/slick.eot");
+  src: url("../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 70px;
+  width: 70px;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: 35px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 6; }
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent; }
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+
+.slick-prev:before, .slick-next:before {
+  font-family: "slick";
+  font-size: 70px;
+  line-height: 1;
+  color: #cf9b99;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased; }
+
+.slick-prev {
+  left: 25px; }
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: 25px; }
+  .slick-prev:before {
+    content: "←"; }
+    [dir="rtl"] .slick-prev:before {
+      content: "→"; }
+
+.slick-next {
+  right: 25px; }
+  [dir="rtl"] .slick-next {
+    left: 25px;
+    right: auto; }
+  .slick-next:before {
+    content: "→"; }
+    [dir="rtl"] .slick-next:before {
+      content: "←"; }
+
+/* Dots */
+.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%; }
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "•";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased; }
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }
+
+/* ----------------------------------------------
+Pop up
+---------------------------------------------- */
+.call-b {
+  margin-left: -222px;
+  margin-top: -152.5px;
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  z-index: 100; }
+  .call-b p:last-child {
+    font-size: 10px;
+    color: #333;
+    letter-spacing: -0.3px; }
+
+.ask-q {
+  width: 578px;
+  height: 341px;
+  margin-left: -289px;
+  margin-top: -170.5px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100; }
+  .ask-q p:last-child {
+    font-size: 10px;
+    color: #333;
+    letter-spacing: -0.3px; }
+  .ask-q form {
+    width: 498px;
+    text-align: center; }
+    .ask-q form div {
+      float: left;
+      text-align: left; }
+    .ask-q form div + div {
+      margin-left: 20px; }
+  .ask-q input {
+    width: 239px; }
+  .ask-q textarea {
+    width: 239px;
+    height: 164px;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 7px;
+    background-color: #FFF;
+    border: 2px solid #cab3a3;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .ask-q input[type="submit"] {
+    width: 356px; }
+  .ask-q .form-title {
+    background-position: 107px -126px; }
+
+.close {
+  position: absolute;
+  top: -24px;
+  right: -25px; }
+  .close a {
+    width: 26px;
+    height: 26px;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4b4b4b;
+    line-height: 26px;
+    background-color: #e09d9e;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+    .close a:hover {
+      background-color: #c23436; }
+
+.form-success {
+  border-color: green !important; }
+
+.form-fail {
+  border-color: red !important; }
+
+.pop-up-wrap {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: none;
+  z-index: 99; }
+
+/*# sourceMappingURL=styles.css.map */

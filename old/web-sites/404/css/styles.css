@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    min-width: 1024px;
+}
+html {
+    margin: 0 auto;
+    background-color: #3e3d3b;
+}
+a {
+    font: bold 36px Arial, sans-serif;
+    color: #00ccff;
+    line-height: 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+p {
+    font: 20px Arial, sans-serif;
+}
+span {
+    font: 22px Arial, sans-serif;
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+b {
+    font: bold 32px Arial, sans-serif;
+}
+br {
+    clear: both;
+}
+img {
+    width: 100%;
+}
+header div {
+    display: inline-block;
+}
+section {
+    padding-bottom: 15px;
+}
+.page {
+    margin: 0 18.75%; /*360px*/
+
+}
+section p {
+    width: 50%;
+    height: 60px;
+    position: relative;
+    text-align: center;
+}
+.position-1 {
+    top: -32px;
+    left: -6.5%; /*-78px*/
+}
+.position-2 {
+    top: 21px;
+    left: 4%; /*48px*/
+}
+.position-3 {
+     top: -82px;
+     left: 55.4%; /*665px*/
+ }
+.position-4 {
+    top: -42px;
+    left: 42.9%; /*515px*/
+}
+.bg-page {
+    height: inherit;
+    background: url("../images/bg.jpg");
+    background-size: cover;
+}
+.b-404 {
+    width: 62%; /*744px*/
+    margin: 265px 19.5% 0;
+}
+.logo {
+    width: 35%; /*420px*/
+    margin-left: 1.7%;
+}
+.logo img {
+    margin-top: 16px;
+}
+.text {
+    width: 52%; /*630px*/
+    float: right;
+}
+.text img {
+    margin-top: 32px;
+}
+@media screen and (max-width: 1620px) {
+    .page {
+        margin: 0 15%;
+    }
+    .b-404 {
+        margin-top: 180px;
+    }
+}
+@media screen and (max-width: 980px) {
+    html, body {
+        min-width: 800px;
+    }
+    .page {
+        margin: 0 10%;
+
+    }
+    .b-404 {
+        margin-top: 100px;
+    }
+}
