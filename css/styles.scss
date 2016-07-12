@@ -191,12 +191,91 @@ a, img {
     padding: 15px;
     outline: none;
   }
+}
+.menu-button-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 50;
   .menu-button {
-    display: none;
     padding: 0;
   }
 }
 
+/*Hamburger*/
+#hamburger
+{
+  box-sizing: border-box;
+  display: none;
+  width: 70px;
+  height: 45px;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 2;
+}
+html:not(.mm-opening):not(.mm-opened) #hamburger
+{
+  transition: top 0.3s ease;
+}
+#hamburger:before,
+#hamburger:after,
+#hamburger span
+{
+  background: #000;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  left: 20px;
+}
+#hamburger:before
+{
+  top: 12px;
+}
+#hamburger span
+{
+  top: 22px;
+}
+#hamburger:after
+{
+  top: 32px;
+}
+
+/* Hamburger animation */
+#hamburger:before,
+#hamburger:after,
+#hamburger span
+{
+  -webkit-transition: none 0.5s ease 0.5s;
+  transition: none 0.5s ease 0.5s;
+
+  -webkit-transition-property: transform, top, bottom, left, opacity;
+  transition-property: transform, top, bottom, left, opacity;
+}
+html.mm-opening #hamburger:before,
+html.mm-opening #hamburger:after
+{
+  top: 20px;
+}
+html.mm-opening #hamburger span
+{
+  left: -50px;
+  opacity: 0;
+}
+html.mm-opening #hamburger:before
+{
+  transform: rotate( 45deg );
+}
+html.mm-opening #hamburger:after
+{
+  transform: rotate( -45deg );
+}
+
+
+
+/*
 .hamburger {
   padding: 13px 15px;
 }
@@ -250,6 +329,7 @@ a, img {
   @include transform(rotate(-90deg));
   @include transition(top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1));
 }
+*/
 
 
 /* ----------------------------------------------
@@ -576,18 +656,28 @@ input[type="submit"] {
 }
 
 
+
 /* MEDIA */
 
 @media (max-width: 960px) {
-  .top-menu {
+  header {
+    display: none;
+  }
+  /*.top-menu {
     float: left;
     padding-left: 20px;
     li + li {
       display: none;
     }
+  }*/
+  /*.menu-button-wrapper {
+    display: block;
     .menu-button {
       display: block;
     }
+  }*/
+  #hamburger {
+    display: block;
   }
   .slider {
     max-width: 600px;
