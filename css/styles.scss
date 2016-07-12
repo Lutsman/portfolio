@@ -192,92 +192,28 @@ a, img {
     outline: none;
   }
 }
-.menu-button-wrapper {
+#m-menu:not( .mm-menu ) {
   display: none;
+}
+#m-menu-btn-wrapper {
+  padding: 0;
+  background-color: #fff;
+  width: 100%;
+  visibility: hidden;
+  //display: none;
   position: fixed;
   top: 0;
   z-index: 50;
-  .menu-button {
-    padding: 0;
-  }
 }
-
-/*Hamburger*/
-#hamburger
-{
-  box-sizing: border-box;
-  display: none;
-  width: 70px;
-  height: 45px;
-  position: fixed;
-  top: 20px;
-  left: 10px;
-  z-index: 2;
+.menu-button {
+  cursor: pointer;
+  padding: 0;
 }
-html:not(.mm-opening):not(.mm-opened) #hamburger
-{
-  transition: top 0.3s ease;
-}
-#hamburger:before,
-#hamburger:after,
-#hamburger span
-{
-  background: #000;
-  content: '';
-  display: block;
-  width: 30px;
-  height: 2px;
-  position: absolute;
-  left: 20px;
-}
-#hamburger:before
-{
-  top: 12px;
-}
-#hamburger span
-{
-  top: 22px;
-}
-#hamburger:after
-{
-  top: 32px;
-}
-
-/* Hamburger animation */
-#hamburger:before,
-#hamburger:after,
-#hamburger span
-{
-  -webkit-transition: none 0.5s ease 0.5s;
-  transition: none 0.5s ease 0.5s;
-
-  -webkit-transition-property: transform, top, bottom, left, opacity;
-  transition-property: transform, top, bottom, left, opacity;
-}
-html.mm-opening #hamburger:before,
-html.mm-opening #hamburger:after
-{
-  top: 20px;
-}
-html.mm-opening #hamburger span
-{
-  left: -50px;
-  opacity: 0;
-}
-html.mm-opening #hamburger:before
-{
-  transform: rotate( 45deg );
-}
-html.mm-opening #hamburger:after
-{
-  transform: rotate( -45deg );
-}
-
-
-
-/*
 .hamburger {
   padding: 13px 15px;
+  background-color: #fff;
+  width: 70px;
+  margin: 0;
 }
 .hamburger-box {
   width: 40px;
@@ -315,21 +251,21 @@ html.mm-opening #hamburger:after
   }
 }
 
-.hamburger--collapse.is-active .hamburger-inner {
+html.mm-opening .hamburger--collapse .hamburger-inner {
   @include transform(translate3d(0, -10px, 0) rotate(-45deg));
   @include transition(transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1));
 }
-.hamburger--collapse.is-active .hamburger-inner::after {
+html.mm-opening .hamburger--collapse .hamburger-inner::after {
   top: 0;
   opacity: 0;
   @include transition(top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear)
 }
-.hamburger--collapse.is-active .hamburger-inner::before {
+html.mm-opening .hamburger--collapse .hamburger-inner::before {
   top: 0;
   @include transform(rotate(-90deg));
   @include transition(top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1));
 }
-*/
+
 
 
 /* ----------------------------------------------
@@ -386,10 +322,6 @@ footer .container {
     position: relative;
     color: $white;
     @include animation(drop 1s linear infinite);
-    //  animation-name: drop; имя анимации //
-    //animation-duration: 1s; продолжительность //
-    //animation-timing-function: linear; от начала до конца с одинаковой скоростью //
-    //animation-iteration-count: infinite; повторяется бесконечное число раз //
   }
 }
 
@@ -419,7 +351,6 @@ footer .container {
 }
 .intro {
   width: 100%;
-  //padding: 0 15px; на квери для мобил
   position: absolute;
   top: 50%;
   left: 0;
@@ -663,21 +594,9 @@ input[type="submit"] {
   header {
     display: none;
   }
-  /*.top-menu {
-    float: left;
-    padding-left: 20px;
-    li + li {
-      display: none;
-    }
-  }*/
-  /*.menu-button-wrapper {
-    display: block;
-    .menu-button {
-      display: block;
-    }
-  }*/
-  #hamburger {
-    display: block;
+  #m-menu-btn-wrapper {
+    visibility: visible;
+    //display: block;
   }
   .slider {
     max-width: 600px;

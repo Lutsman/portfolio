@@ -159,21 +159,19 @@ $(document).ready(function(){
 
             var mmenuScroll = new ScrollToAnchor({
                 listenedBlock: document.getElementById('#m-menu'),
-                translation:  document.querySelector('nav.navbar').offsetHeight
+                translation:  document.querySelector('#m-menu-btn-wrapper').offsetHeight
             });
+
+            console.log(document.querySelector('#m-menu-btn-wrapper').offsetHeight);
 
             setUpMmenu();
 
             function setUpMmenu() {
                 var $menu = $('nav#m-menu');
+                var $openMenuBtn = $('#hamburger');
 
                 $menu.mmenu({
-                    //extensions: ["effect-menu-slide", "effect-listitems-slide", "theme-dark"],
-                    dragOpen: true,
-                    preventTabbing: true
-                    // navbar : false,
-                    //onClick : {
-                     //setSelected : false
+                    "extensions": ["theme-dark"]
                      });
 
 
@@ -204,6 +202,10 @@ $(document).ready(function(){
                     }
 
                 );
+                $openMenuBtn.click(function () {
+                    api.open();
+                });
+
             }
         })();
 
