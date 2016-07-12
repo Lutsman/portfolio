@@ -109,7 +109,7 @@ footer {
 
 .container {
   max-width: 1200px;
-  padding: 52px 15px;
+  padding: 0 15px 50px;
 }
 
 /* ----------------------------------------------
@@ -189,8 +189,68 @@ a, img {
   a {
     display: block;
     padding: 15px;
+    outline: none;
+  }
+  .menu-button {
+    display: none;
+    padding: 0;
   }
 }
+
+.hamburger {
+  padding: 13px 15px;
+}
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  position: relative; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: $fcMain;
+  border-radius: 4px;
+  position: absolute;
+}
+.hamburger-inner {
+  &::before, &::after {
+    content: "";
+    display: block; }
+  &::before {
+    top: -10px; }
+  &::after {
+    bottom: -10px; }
+}
+
+.hamburger--collapse {
+  .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    @include transition(transform 0.15s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19));
+    &::after {
+      top: -20px;
+      @include transition(top 0.3s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear);
+    }
+    &::before {
+      @include transition(top 0.12s 0.3s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19));
+    }
+  }
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+  @include transform(translate3d(0, -10px, 0) rotate(-45deg));
+  @include transition(transform 0.15s 0.32s cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  @include transition(top 0.3s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.27s linear)
+}
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  @include transform(rotate(-90deg));
+  @include transition(top 0.12s 0.18s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.15s 0.42s cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+
 
 /* ----------------------------------------------
  Footer
@@ -202,7 +262,7 @@ footer .container {
 .footer__contact {
   width: 50%;
   float: left;
-  padding: 0 170px;
+  padding-left: 15%;
   margin-bottom: 20px;
   span {
     font-size: 14px;
@@ -304,8 +364,9 @@ footer .container {
 }
 
 .slider {
-  max-width: 780px;
-  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px 80px;
   h3 {
     padding-bottom: 20px;
   }
@@ -343,12 +404,14 @@ footer .container {
 .chart {
   display: block;
   position: relative;
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  width: 100%;
   line-height: 200px;
   text-align: center;
   canvas {
-    position: absolute; top: 0; left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -379,23 +442,26 @@ figure {
   }
 }
 .about__content {
-  padding: 0 150px 50px;
+  width: 75%;
+  float: left;
+  padding: 0 50px 50px;
   p {
     margin-bottom: 10px;
-    &:first-child {
-      margin-bottom: 20px;
-      font-style: italic;
-    }
+  }
+  .about__intro {
+    margin-bottom: 20px;
+    font-style: italic;
   }
 }
 .about__info {
-  width: 30%;
+  width: 25%;
   float: left;
-  padding: 0 50px 50px;
+  padding-bottom: 50px;
   & + .about__info {
     margin-left: 5%;
   }
   .title {
+    padding: 0;
     text-align: left;
   }
   a {
@@ -405,9 +471,6 @@ figure {
 }
 .courses {
   padding: 5px 0;
-  & + ul {
-    padding-left: 10px;
-  }
 }
 
 
@@ -422,7 +485,7 @@ figure {
 
 form {
   width: 50%;
-  padding: 20px 20px 120px;
+  padding: 20px 20px 100px;
 }
 
 input, textarea {
@@ -509,5 +572,103 @@ input[type="submit"] {
     border-top: 2px solid #fff;
     border-left: 2px solid #fff;
     @include transform(rotate(45deg));
+  }
+}
+
+
+/* MEDIA */
+
+@media (max-width: 960px) {
+  .top-menu {
+    float: left;
+    padding-left: 20px;
+    li + li {
+      display: none;
+    }
+    .menu-button {
+      display: block;
+    }
+  }
+  .slider {
+    max-width: 600px;
+    padding: 20px 60px;
+  }
+  .slider__block {
+    height: 400px;
+  }
+  .chart {
+    max-width: 150px;
+    line-height: 150px;
+    canvas {
+      width: 150px !important;
+      height: 150px !important;
+    }
+  }
+  .about__content, .about__info {
+    width: 100%;
+    padding: 0 50px 50px;
+  }
+  form {
+    width: 70%;
+  }
+  .footer__contact {
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .intro {
+    font-size: 18px;
+  }
+  .top-menu {
+    padding-left: 0;
+  }
+  .slider {
+    max-width: 290px;
+    padding: 20px 0;
+  }
+  .slider__block {
+    height: 280px;
+  }
+  .slick-prev, .slick-next, .slick-dots {
+    display: none !important;
+  }
+  .skill__block .title {
+    font-size: 14px;
+  }
+  .chart {
+    max-width: 80px;
+    line-height: 80px;
+    canvas {
+      width: 80px !important;
+      height: 80px !important;
+    }
+  }
+  figure {
+    .title {
+      font-size: 18px;
+    }
+    > img {
+      max-width: 100px;
+    }
+  }
+  .about__content, .about__info {
+    padding: 0 10px 50px;
+  }
+  form {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .footer__contact {
+    width: 100%;
   }
 }

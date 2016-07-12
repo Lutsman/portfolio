@@ -7,7 +7,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hamburgers.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/jquery.mmenu.css">
@@ -46,7 +46,13 @@
             <div class="container">
                 <ul class="top-menu">
                     <li>
-                        <a id="menu-button" href="#m-menu" data-translation="0">Мобильное меню</a>
+                        <a id="menu-button" class="menu-button" href="#m-menu" data-translation="0">
+                            <div class="hamburger hamburger--collapse js-hamburger">
+                                <div class="hamburger-box">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                            </div>
+                        </a>
                     </li>
                     <li><a href="#home" data-translation="0">Главная</a></li>
                     <li><a href="#portfolio">Наши работы</a></li>
@@ -117,48 +123,42 @@
 
             <div>
                 <div class="skill__block">
-                <span data-percent="90" class="chart easyPieChart">
-                    <span class="percent">90%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">HTML 5</p>
+                    <span data-percent="90" class="chart easyPieChart">
+                        <span class="percent">90%</span>
+                    </span>
                 </div>
                 <div class="skill__block">
-                <span data-percent="90" class="chart easyPieChart">
-                    <span class="percent">90%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">CSS 3</p>
+                    <span data-percent="90" class="chart easyPieChart">
+                        <span class="percent">90%</span>
+                    </span>
                 </div>
                 <div class="skill__block">
-                <span data-percent="75" class="chart easyPieChart">
-                    <span class="percent">75%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">SASS / SCSS</p>
+                    <span data-percent="75" class="chart easyPieChart">
+                        <span class="percent">75%</span>
+                    </span>
                 </div>
             </div>
             <div>
                 <div class="skill__block">
-                <span data-percent="85" class="chart easyPieChart">
-                    <span class="percent">85%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">JavaScript</p>
+                    <span data-percent="85" class="chart easyPieChart">
+                        <span class="percent">85%</span>
+                    </span>
                 </div>
                 <div class="skill__block">
-                <span data-percent="70" class="chart easyPieChart">
-                    <span class="percent">70%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">JQuery</p>
+                    <span data-percent="70" class="chart easyPieChart">
+                        <span class="percent">70%</span>
+                    </span>
                 </div>
                 <div class="skill__block">
-                <span data-percent="50" class="chart easyPieChart">
-                    <span class="percent">50%</span>
-                    <canvas width="200" height="200"></canvas>
-                </span>
                     <p class="title">Photoshop</p>
+                    <span data-percent="50" class="chart easyPieChart">
+                        <span class="percent">50%</span>
+                    </span>
                 </div>
             </div>
 
@@ -178,52 +178,34 @@
                 <figcaption class="title">Евгения Омельченко</figcaption>
             </figure>
             <div class="about__content">
-                <p>Здравствуйте. Меня зовут Дмитрий Луценко, мою спутницу жизни Евгения Омельченко.</p>
-                <p>Мы любим красивые веб сайты, а также путешествовать, бывать в новых местах, часто ездить. Поэтому решили заниматься front end разработкой.
-                    Последние полтора года мы занимаемся версткой сайтов из PSD, PNG, скетчей.
-                    Знаем HTML5, Sass, Js, jQuery, понимаем ООП,  знаем о ES6.</p>
+                <p class="about__intro">Здравствуйте. Меня зовут Дмитрий Луценко, мою спутницу жизни Евгения Омельченко.</p>
+                <p>Мы любим красивые веб сайты, а также путешествовать, бывать в новых местах, часто ездить. Поэтому
+                    решили заниматься front end разработкой. Последние полтора года мы занимаемся версткой сайтов из
+                    PSD, PNG, скетчей.</p>
+                <p>Знаем HTML5, CSS3, Sass, Js, jQuery, понимаем ООП,  знаем о ES6.</p>
                 <p>С примерами наших работ вы можете ознакомиться в разделе <a class="link" href="#portfolio">портфолио</a>.</p>
             </div>
-            <div>
-                <div class="about__info">
-                    <p class="title">Прошли курсы:</p>
-                    <ul>
-                        <li class="courses"><a class="link" target="_blank" href="http://www.codecademy.com">www.codecademy.com</a></li>
+            <div class="about__info">
+                <p class="title">Прошли курсы:</p>
+                <ul>
+                    <li class="courses"><a class="link" target="_blank" href="http://www.codecademy.com">www.codecademy.com</a>
                         <ul>
                             <li>HTML & CSS</li>
                             <li>JavaScript</li>
                             <li>JQuery</li>
                         </ul>
-
-                        <li class="courses"><a class="link" target="_blank" href="http://www.specialist.ru">www.specialist.ru</a></li>
+                    </li>
+                    <li class="courses"><a class="link" target="_blank" href="http://www.specialist.ru">www.specialist.ru</a>
                         <ul>
                             <li>Adobe Photoshop CS6</li>
                         </ul>
-
-                        <li class="courses"><a class="link" target="_blank" href="http://learn.javascript.ru">learn.javascript.ru</a></li>
+                    </li>
+                    <li class="courses"><a class="link" target="_blank" href="http://learn.javascript.ru">learn.javascript.ru</a>
                         <ul>
                             <li>JavaScript <a href="#" data-jslghtbx="images/certificate_JS.jpg">(Сертификат)</a></li>
                         </ul>
-                    </ul>
-                </div>
-                <div class="about__info">
-                    <p class="title">Хобби:</p>
-                    <ul>
-                        <li>Путешествия если бы тут было больше текста</li>
-                        <li>Горные походы было бы конечно гораздо красивее</li>
-                        <li>Верховая езда с точки зрения дизайна</li>
-                    </ul>
-                </div>
-                <div class="about__info">
-                    <p class="title">Хобби:</p>
-                    <ul>
-                        <li>Если бы тут было больше текста было бы конечно гораздо красивееа с точки зрения дизайна</li>
-                        <!--<li>Путешествия</li>
-                        <li>Горные походы</li>
-                        <li>Верховая езда</li>-->
-                        <li>Если бы тут было больше текста было бы конечно гораздо красивееа с точки зрения дизайна</li>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
 
         </div><!-- .container -->
@@ -283,7 +265,7 @@
                 </span>
             </div>
 
-            <p class="copyright">&copy; 2015 Евгения Омельченко, Дмитрий Луценко</p>
+            <p class="copyright">&copy; 2015 Дмитрий Луценко, Евгения Омельченко</p>
         </div><!-- .container -->
     </footer>
 

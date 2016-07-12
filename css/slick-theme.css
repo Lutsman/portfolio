@@ -51,7 +51,7 @@
     -moz-osx-font-smoothing: grayscale; }
 
 .slick-prev {
-  left: -50px; }
+  left: 0; }
   [dir="rtl"] .slick-prev {
     left: auto;
     right: -50px; }
@@ -61,9 +61,9 @@
       content: "→"; }
 
 .slick-next {
-  right: -50px; }
+  right: 0; }
   [dir="rtl"] .slick-next {
-    left: -25px;
+    left: -50px;
     right: auto; }
   .slick-next:before {
     content: "→"; }
@@ -77,6 +77,7 @@
 .slick-dots {
   position: absolute;
   bottom: -25px;
+  left: 0;
   list-style: none;
   display: block;
   text-align: center;
